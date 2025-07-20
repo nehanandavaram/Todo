@@ -71,10 +71,7 @@ class _TodoScreenState extends State<TodoScreen> {
           children: [
             Text("Todo-AI"),
             SizedBox(height: 5),
-            Text(
-              "${DateTime.now().toLocal().toString().split(' ')[0]}",
-              style: TextStyle(fontWeight: FontWeight.normal),
-            ),
+            Text("${DateTime.now().toLocal().toString().split(' ')[0]}"),
           ],
         ),
         actions: [

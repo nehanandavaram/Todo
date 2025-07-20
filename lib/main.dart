@@ -11,9 +11,9 @@ final kDarkScheme = ColorScheme.fromSeed(
 void main() {
   runApp(
     MaterialApp(
-      darkTheme: ThemeData.dark().copyWith(
+      darkTheme: ThemeData.dark(useMaterial3: true).copyWith(
         colorScheme: kDarkScheme,
-        cardTheme: CardTheme().copyWith(
+        cardTheme: CardThemeData(
           color: kDarkScheme.primaryContainer,
           margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         ),
@@ -24,14 +24,14 @@ void main() {
           ),
         ),
       ),
-      theme: ThemeData().copyWith(
+      theme: ThemeData(useMaterial3: true).copyWith(
         scaffoldBackgroundColor: Colors.white,
         colorScheme: kColorScheme,
         appBarTheme: AppBarTheme(
           backgroundColor: kColorScheme.primaryContainer,
           foregroundColor: kColorScheme.onPrimaryContainer,
         ),
-        cardTheme: CardTheme().copyWith(
+        cardTheme: CardThemeData(
           color: kColorScheme.primaryContainer,
           margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         ),
