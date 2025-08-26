@@ -31,12 +31,10 @@ class _NewTodosState extends State<NewTodos> {
   // }
 
   void _presentDatePicker() async {
-    final now = DateTime.now();
-    final firstDate = DateTime(now.year - 1, now.month, now.day);
     final _pickedDate = await showDatePicker(
       context: context,
-      firstDate: firstDate,
-      lastDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
     );
     setState(() {
       _SelectedDate = _pickedDate;

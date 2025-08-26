@@ -42,6 +42,15 @@ class _TodoScreenState extends State<TodoScreen> {
     });
   }
 
+  void _updateTodos(Todos oldTodo, Todos newTodo) {
+    final todoIndex = _ListOfTodos.indexOf(oldTodo);
+    if (todoIndex != -1) {
+      setState(() {
+        _ListOfTodos[todoIndex] = newTodo;
+      });
+    }
+  }
+
   void _removedExpenses(Todos todo) {
     final todoIndex = _ListOfTodos.indexOf(todo);
     setState(() {
@@ -71,7 +80,7 @@ class _TodoScreenState extends State<TodoScreen> {
           children: [
             Text("Todo-AI"),
             SizedBox(height: 5),
-            Text("${DateTime.now().toLocal().toString().split(' ')[0]}"),
+            // Text("${DateTime.now().toLocal().toString().split(' ')[0]}"),
           ],
         ),
         actions: [
@@ -85,6 +94,7 @@ class _TodoScreenState extends State<TodoScreen> {
             child: TodosList(
               todo: _ListOfTodos,
               onRemoveTodos: _removedExpenses,
+              onEditTodos: _updateTodos,
             ),
           ),
         ],
